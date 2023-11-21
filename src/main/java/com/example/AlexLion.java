@@ -3,9 +3,11 @@ package com.example;
 import java.util.List;
 
 public class AlexLion extends Lion {
+    private final Feline feline;
 
-    public AlexLion() throws Exception {
+    public AlexLion(String sex, Feline feline) throws Exception {
         super("Самец", new Feline());
+        this.feline = feline;
     }
 
     public List<String> getFriends() {

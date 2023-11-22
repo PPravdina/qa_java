@@ -36,19 +36,7 @@ public class LionTest {
     public void testDoesHaveMane() throws Exception {
         Feline mockFeline = mock(Feline.class);
         Lion lion = new Lion(sex, mockFeline);
-
         assertEquals(expectedHasMane, lion.doesHaveMane());
-        // Добавляем проверку на testInvalidSex, если expectedHasMane равен false
-        if (!expectedHasMane) {
-            try {
-                // Ожидается, что при передаче недопустимого значения пола выбросится исключение
-                new Lion("Используйте допустимые значения пола животного - самей или самка", mock(Feline.class));
-                // Если код дошел до этой строки, значит исключение не было выброшено, что не является ожидаемым поведением
-                throw new AssertionError("Ожидалось выбрасывание исключения, но оно не произошло.");
-            } catch (Exception ignored) {
-                // Исключение было выброшено, что является ожидаемым поведением
-            }
-        }
     }
 
     @Test
